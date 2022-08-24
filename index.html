@@ -15,30 +15,116 @@
       .row {
         width: 100%;
       }
+      table {
+        border-collapse: collapse;
+        border: solid 2px orange; /*表全体を線で囲う*/
+      }
+      table th,
+      table td {
+        border: dashed 1px orange; /**/
+        /*破線 1px オレンジ*/
+      }
     </style>
   </head>
   <body>
     <div class="row">
-      <button disabled>disbaled</button>
+      <button onclick="onClick(1)" disabled>disbaled</button>
     </div>
     <div class="row">
-      <button aria-hidden="true">aria-hidden="true"</button>
+      <button onclick="onClick(2)" aria-hidden="true">
+        aria-hidden="true"
+      </button>
     </div>
     <div class="row">
-      <button aria-disabled="true">aria-disabled="true"</button>
+      <button onclick="onClick(3)" aria-disabled="true">
+        aria-disabled="true"
+      </button>
     </div>
     <div class="row">
-      <button disabled aria-hidden="true">disbaled, aria-hidden="true"</button>
+      <button onclick="onClick(4)" disabled aria-hidden="true">
+        disbaled, aria-hidden="true"
+      </button>
     </div>
     <div class="row">
-      <button disabled aria-disabled="true">
+      <button onclick="onClick(5)" disabled aria-disabled="true">
         disbaled, aria-disabled="true"
       </button>
     </div>
     <div class="row">
-      <button disabled aria-disabled="true" aria-hidden="true">
+      <button
+        onclick="onClick(6)"
+        disabled
+        aria-disabled="true"
+        aria-hidden="true"
+      >
         disbaled, aria-disabled="true", aria-hidden="true"
       </button>
     </div>
+
+    <hr />
+
+    検証結果
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Mac/VoiceOver</th>
+          <th>iPhone/VoiceOver</th>
+          <th>TalkBack</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><pre>&lt;button disabled&gt;</pre></td>
+          <td></td>
+          <td>選択できる→読み上げられる</td>
+          <td>選択できる→読み上げられる</td>
+        </tr>
+        <tr>
+          <td><pre>&lt;button aria-hidden=&quot;true&quot;&gt;</pre></td>
+          <td>Tabで選択できる→読み上げられる、クリックできる</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><pre>&lt;button aria-disabled=&quot;true&quot;&gt;</pre></td>
+          <td>Tabで選択できる→読み上げられる、クリックできる</td>
+          <td>選択できる→読み上げられる</td>
+          <td>選択できる→読み上げられる</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>&lt;button disabled aria-hidden=&quot;true&quot;&gt;</pre>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>&lt;button disabled aria-disabled=&quot;true&quot;&gt;</pre>
+          </td>
+          <td></td>
+          <td>選択できる→読み上げられる</td>
+          <td>選択できる→読み上げられる</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+&lt;button disabled aria-disabled=&quot;true&quot; aria-hidden=&quot;true&quot;&gt;</pre
+            >
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      function onClick(id) {
+        alert(id);
+      }
+    </script>
   </body>
 </html>
