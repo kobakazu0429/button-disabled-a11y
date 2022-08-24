@@ -28,35 +28,24 @@
   </head>
   <body>
     <div class="row">
-      <button onclick="onClick(1)" disabled>disbaled</button>
+      <button disabled>disbaled</button>
     </div>
     <div class="row">
-      <button onclick="onClick(2)" aria-hidden="true">
-        aria-hidden="true"
-      </button>
+      <button aria-hidden="true">aria-hidden="true"</button>
     </div>
     <div class="row">
-      <button onclick="onClick(3)" aria-disabled="true">
-        aria-disabled="true"
-      </button>
+      <button aria-disabled="true">aria-disabled="true"</button>
     </div>
     <div class="row">
-      <button onclick="onClick(4)" disabled aria-hidden="true">
-        disbaled, aria-hidden="true"
-      </button>
+      <button disabled aria-hidden="true">disbaled, aria-hidden="true"</button>
     </div>
     <div class="row">
-      <button onclick="onClick(5)" disabled aria-disabled="true">
+      <button disabled aria-disabled="true">
         disbaled, aria-disabled="true"
       </button>
     </div>
     <div class="row">
-      <button
-        onclick="onClick(6)"
-        disabled
-        aria-disabled="true"
-        aria-hidden="true"
-      >
+      <button disabled aria-disabled="true" aria-hidden="true">
         disbaled, aria-disabled="true", aria-hidden="true"
       </button>
     </div>
@@ -122,9 +111,9 @@
       </tbody>
     </table>
     <script>
-      function onClick(id) {
-        alert(id);
-      }
+      Array.from(document.querySelectorAll("button")).forEach((button, i) => {
+        alert(i + 1);
+      });
     </script>
   </body>
 </html>
