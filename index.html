@@ -112,8 +112,14 @@
     </table>
     <script>
       Array.from(document.querySelectorAll("button")).forEach((button, i) => {
-        button.addEventListener("click touchstart", () => {
-          alert(i + 1);
+        ["click", "touchstart"].forEach((eventName) => {
+          button.addEventListener(
+            eventName,
+            () => {
+              alert(i + 1);
+            },
+            false
+          );
         });
       });
     </script>
