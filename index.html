@@ -72,13 +72,13 @@
         </tr>
         <tr>
           <td><pre>&lt;button aria-hidden=&quot;true&quot;&gt;</pre></td>
-          <td>Tabで選択できる→読み上げられる、クリックできる</td>
+          <td>Tabで選択できる→読み上げられる。クリックできる。</td>
           <td></td>
           <td></td>
         </tr>
         <tr>
           <td><pre>&lt;button aria-disabled=&quot;true&quot;&gt;</pre></td>
-          <td>Tabで選択できる→読み上げられる、クリックできる</td>
+          <td>Tabで選択できる→読み上げられる。クリックできる。</td>
           <td>選択できる→読み上げられる</td>
           <td>選択できる→読み上げられる</td>
         </tr>
@@ -112,7 +112,9 @@
     </table>
     <script>
       Array.from(document.querySelectorAll("button")).forEach((button, i) => {
-        alert(i + 1);
+        button.addEventListener("click touchstart", () => {
+          alert(i + 1);
+        });
       });
     </script>
   </body>
