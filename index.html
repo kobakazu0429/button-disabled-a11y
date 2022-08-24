@@ -27,24 +27,26 @@
     </style>
   </head>
   <body>
+    <div class="row">1: <button>defalut</button></div>
+    <div class="row">2: <button disabled>disbaled</button></div>
     <div class="row">
-      <button disabled>disbaled</button>
+      3: <button aria-hidden="true">aria-hidden="true"</button>
     </div>
     <div class="row">
-      <button aria-hidden="true">aria-hidden="true"</button>
+      4: <button aria-disabled="true">aria-disabled="true"</button>
     </div>
     <div class="row">
-      <button aria-disabled="true">aria-disabled="true"</button>
-    </div>
-    <div class="row">
+      5:
       <button disabled aria-hidden="true">disbaled, aria-hidden="true"</button>
     </div>
     <div class="row">
+      6:
       <button disabled aria-disabled="true">
         disbaled, aria-disabled="true"
       </button>
     </div>
     <div class="row">
+      7:
       <button disabled aria-disabled="true" aria-hidden="true">
         disbaled, aria-disabled="true", aria-hidden="true"
       </button>
@@ -65,26 +67,46 @@
       </thead>
       <tbody>
         <tr>
-          <td><pre>&lt;button disabled&gt;</pre></td>
-          <td></td>
-          <td>選択できる→読み上げられる</td>
-          <td>選択できる→読み上げられる</td>
-        </tr>
-        <tr>
-          <td><pre>&lt;button aria-hidden=&quot;true&quot;&gt;</pre></td>
-          <td>Tabで選択できる→読み上げられる。クリックできる。</td>
+          <td>
+            <pre>1: &lt;button&gt;</pre>
+          </td>
+          <td>
+            Tabで選択できる→読み上げられる、マウス、リターン、スペースでクリックできる。
+          </td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td><pre>&lt;button aria-disabled=&quot;true&quot;&gt;</pre></td>
-          <td>Tabで選択できる→読み上げられる。クリックできる。</td>
-          <td>選択できる→読み上げられる</td>
+          <td>
+            <pre>2: &lt;button disabled&gt;</pre>
+          </td>
+          <td></td>
+          <td>選択できる→読み上げられる。クリックできる。</td>
           <td>選択できる→読み上げられる</td>
         </tr>
         <tr>
           <td>
-            <pre>&lt;button disabled aria-hidden=&quot;true&quot;&gt;</pre>
+            <pre>3: &lt;button aria-hidden=&quot;true&quot;&gt;</pre>
+          </td>
+          <td>
+            Tabで選択できる→読み上げられる、マウス、リターン、スペースでクリックできる。
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>4: &lt;button aria-disabled=&quot;true&quot;&gt;</pre>
+          </td>
+          <td>
+            Tabで選択できる→読み上げられる、マウス、リターン、スペースでクリックできる。
+          </td>
+          <td>選択できる→読み上げられる。クリックできる。</td>
+          <td>選択できる→読み上げられる</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>5: &lt;button disabled aria-hidden=&quot;true&quot;&gt;</pre>
           </td>
           <td></td>
           <td></td>
@@ -92,16 +114,16 @@
         </tr>
         <tr>
           <td>
-            <pre>&lt;button disabled aria-disabled=&quot;true&quot;&gt;</pre>
+            <pre>6: &lt;button disabled aria-disabled=&quot;true&quot;&gt;</pre>
           </td>
           <td></td>
-          <td>選択できる→読み上げられる</td>
+          <td>選択できる→読み上げられる。クリックできる。</td>
           <td>選択できる→読み上げられる</td>
         </tr>
         <tr>
           <td>
             <pre>
-&lt;button disabled aria-disabled=&quot;true&quot; aria-hidden=&quot;true&quot;&gt;</pre
+7: &lt;button disabled aria-disabled=&quot;true&quot; aria-hidden=&quot;true&quot;&gt;</pre
             >
           </td>
           <td></td>
