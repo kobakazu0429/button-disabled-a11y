@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+      }
+      .row {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <button disabled>disbaled</button>
+    </div>
+    <div class="row">
+      <button aria-hidden="true">aria-hidden="true"</button>
+    </div>
+    <div class="row">
+      <button aria-disabled="true">aria-disabled="true"</button>
+    </div>
+    <div class="row">
+      <button disabled aria-hidden="true">disbaled, aria-hidden="true"</button>
+    </div>
+    <div class="row">
+      <button disabled aria-disabled="true">
+        disbaled, aria-disabled="true"
+      </button>
+    </div>
+    <div class="row">
+      <button disabled aria-disabled="true" aria-hidden="true">
+        disbaled, aria-disabled="true", aria-hidden="true"
+      </button>
+    </div>
+  </body>
+</html>
